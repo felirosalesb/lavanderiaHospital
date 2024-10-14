@@ -1,0 +1,68 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+
+    <link rel="stylesheet" href="{% static 'menu.css' %}" />
+
+    <script
+      src="https://kit.fontawesome.com/41bcea2ae3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body id="body">
+    <header>
+      <div class="icon__menu">
+        <i class="fas fa-bars" id="btn_open"></i>
+      </div>
+    </header>
+
+    <div class="menu__side" id="menu_side">
+      <div class="options__menu">
+        <a href="{% url 'home' %}" class="selected">
+          <div class="option">
+            <i class="fas fa-home" title="inicio"></i>
+            <h4>Inicio</h4>
+          </div>
+        </a>
+
+        <a href="{% url 'ingresoRopa' %}">
+          <div class="option">
+            <i class="far fa-file" title="ingresoRopa"></i>
+            <h4>Gestion ropa</h4>
+          </div>
+        </a>
+
+        <a href="{% url 'reporte'%}">
+          <div class="option">
+            <i class="far fa-sticky-note" title="reporte"></i>
+            <h4>Generar Reporte</h4>
+          </div>
+        </a>
+
+        <a href="{% url 'perfil' %}">
+          <div class="option">
+            <i class="far fa-address-card" title="perfil"></i>
+            <h4>Perfil</h4>
+          </div>
+        </a>
+
+        <a href="{% url 'login' %}">
+          <div class="option">
+            <i class="fa-solid fa-right-from-bracket" title="cerrarSesion"></i>
+            <h4>Cerrar sesión</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <div class="contenedor">{% block content %} {% endblock %}</div>
+  </body>
+</html>
