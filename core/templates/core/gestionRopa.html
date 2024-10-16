@@ -1,0 +1,42 @@
+{% extends 'core/menu.html' %} {% load static %}
+<!-- Asegúrate de cargar el tag static -->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'core/css/gestionRopa.css' %}"
+/>
+{% block head %}
+<link rel="stylesheet" href="{% static 'gestionRopa.css' %}" />
+{% endblock %} {% block content %}
+<!-- Titulo pagina -->
+<h1 class="tituloGestionRopa">Gestión Ropa</h1>
+<!-- CONTENIDO -->
+
+<div class="sectionGestionRopa">
+  <div class="panelGestion">
+    <div class="gestionRopaInterna">
+      <h1>Ropa Lavanderia Hospital</h1>
+      <!-- Contenido específico para Lavanderia Hospital -->
+      <div class="contenidoGestionRopaInterna">
+        <h2>Total de Ropa:</h2>
+        <h2>Ropa sucia:</h2>
+        <h2>Ropa limpia disponible</h2>
+
+        <button>Editar contenido</button>
+      </div>
+    </div>
+
+    <div class="gestionRopaExterna">
+      <h1>Ropa Lavanderia Externa</h1>
+      <!-- Contenido específico para Lavanderia Externa -->
+      <div class="contenidoGestionRopaExterna">
+        <h2>Total de Ropa:</h2>
+        <h2>Ropa sucia:</h2>
+        <h2>Ropa limpia disponible</h2>
+      </div>
+      <button>Editar contenido</button>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

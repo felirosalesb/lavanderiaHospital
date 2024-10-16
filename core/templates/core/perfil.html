@@ -1,5 +1,6 @@
-{% extends 'core/menu.html' %} {% load static %} {% block css %}
+{% extends 'core/menu.html' %} {% load static %} {% block head %}
 <link rel="stylesheet" href="{% static 'perfil.css' %}" />
+
 {% endblock %} {% block content %}
 <h1>Perfil</h1>
 <div class="page-content page-container" id="page-content">
@@ -16,8 +17,9 @@
                     class="img-radius"
                     alt="User-Profile-Image"
                   />
+                  <!--DEBE RESCAATR INFORMACION-->
                 </div>
-                <h6 class="f-w-600">Hembo Tingor</h6>
+                <h1 class="f-w-600">Fulanito Cazuela</h1>
                 <p>Web Designer</p>
                 <i
                   class="mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"
@@ -59,11 +61,12 @@
                       title="Facebook"
                       data-original-title="facebook"
                       data-abc="true"
-                      ><i
+                    >
+                      <i
                         class="mdi mdi-facebook feather icon-facebook facebook"
                         aria-hidden="true"
-                      ></i
-                    ></a>
+                      ></i>
+                    </a>
                   </li>
                   <li>
                     <a
@@ -73,11 +76,12 @@
                       title="Twitter"
                       data-original-title="twitter"
                       data-abc="true"
-                      ><i
+                    >
+                      <i
                         class="mdi mdi-twitter feather icon-twitter twitter"
                         aria-hidden="true"
-                      ></i
-                    ></a>
+                      ></i>
+                    </a>
                   </li>
                   <li>
                     <a
@@ -87,11 +91,12 @@
                       title="Instagram"
                       data-original-title="instagram"
                       data-abc="true"
-                      ><i
+                    >
+                      <i
                         class="mdi mdi-instagram feather icon-instagram instagram"
                         aria-hidden="true"
-                      ></i
-                    ></a>
+                      ></i>
+                    </a>
                   </li>
                 </ul>
               </div>

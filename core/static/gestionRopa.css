@@ -1,0 +1,37 @@
+/* Estilos para la página de Gestión Ropa */
+.tituloGestionRopa {
+    text-align: start;
+    font-size: 2em;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.sectionGestionRopa {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.panelGestion {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.gestionRopaInterna,
+.gestionRopaExterna {
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+.gestionRopaInterna h1,
+.gestionRopaExterna h1 {
+    display: flex;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    justify-content: center;
+}

@@ -8,7 +8,7 @@ def home(request):
     return render(request, "core/home.html")
 
 def ingresoRopa(request):
-    return render(request, "core/ingresoRopa.html")
+    return render(request, "core/gestionRopa.html")
 
 def reporte(request):
     return render(request, "core/reporte.html")
