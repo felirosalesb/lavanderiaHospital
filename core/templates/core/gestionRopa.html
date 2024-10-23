@@ -7,20 +7,25 @@
 <!-- Titulo pagina -->
 <h1 class="tituloGestionRopa">Gestión Ropa</h1>
 
-<!--  GENERADOR DE REPORTES -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reporteModal"></button>
-  Generar reporte
-</button>
+<!--  INICIO GENERADOR DE REPORTES -->
+  <div class="generadorReportes">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reporteModal">  Generar reporte</button>
+
+</div>
+
 
 <!-- Modal -->
-<div class="modal fade" id="externaModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-aria-labelledby="externaModalLabel" aria-hidden="true">
+<div class="modal fade" id="reporteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="reporteModalLabel" aria-hidden="true">
 <div class="modal-dialog">
   <div class="modal-content">
 <div class="modal-header">
-  <h1 class="modal-title fs-5" id="externaModalLabel">Generar reortes</h1>
+  <h1 class="modal-title fs-5" id="reporteModalLabel">Generar reortes</h1>
   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
+
+<!--  FIN GENERADOR DE REPORTES -->
+
 <!--Formulario-->
 <div class="modal-body">
   <form id="externaForm">
@@ -36,7 +41,7 @@ aria-labelledby="externaModalLabel" aria-hidden="true">
 
 
   </form>
-</div>
+</div>  
 <!--Botones-->
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>

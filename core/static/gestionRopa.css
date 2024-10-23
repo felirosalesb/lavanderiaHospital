@@ -1,4 +1,14 @@
 /* Estilos para la página de Gestión Ropa */
+
+/* Inicio generador de reportes */
+.generadorReportes button{
+    margin-left: 20px;
+}
+
+/* Fin generador de reportes */
+
+
+
 .tituloGestionRopa {
     text-align: start;
     font-size: 2em;
