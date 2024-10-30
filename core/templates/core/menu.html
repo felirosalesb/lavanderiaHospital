@@ -39,6 +39,24 @@
       <div class="icon__menu">
         <i class="fas fa-bars" id="btn_open"></i>
       </div>
+
+      <div id="fecha"></div>
+      <script>
+        // Obtener la fecha actual
+        const fechaActual = new Date();
+
+        // Opciones para formatear la fecha
+        const opciones = { year: "numeric", month: "long", day: "numeric" };
+
+        // Formatear la fecha
+        const fechaFormateada = fechaActual.toLocaleDateString(
+          "es-ES",
+          opciones
+        );
+
+        // Mostrar la fecha en el div
+        document.getElementById("fecha").textContent = fechaFormateada;
+      </script>
     </header>
 
     <div class="menu__side" id="menu_side">
@@ -57,7 +75,6 @@
           </div>
         </a>
 
-      
         <a href="{% url 'perfil' %}">
           <div class="option">
             <i class="far fa-address-card" title="perfil"></i>

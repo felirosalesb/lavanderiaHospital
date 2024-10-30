@@ -1,22 +1,14 @@
-{% extends 'core/menu.html' %} {% block content %}
-<div class="cabecera">
-  <h1>Hola "Nombre de Usuario"</h1>
-  <h4></h4>
-  <div id="fecha"></div>
+{% extends 'core/menu.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'home.css' %}" />
+
+{% endblock %} {% block content %}
+
+<div class="menuHead">
+  {% if user.is_authenticated %}
+  <h1 class="">Hola {{ user.first_name }} {{ user.last_name }}</h1>
+  {% else %}
+  <h1>Bienvenido a la lavandería del Hospital</h1>
+  {% endif %}
 </div>
-
-<script>
-  // Obtener la fecha actual
-  const fechaActual = new Date();
-
-  // Opciones para formatear la fecha
-  const opciones = { year: "numeric", month: "long", day: "numeric" };
-
-  // Formatear la fecha
-  const fechaFormateada = fechaActual.toLocaleDateString("es-ES", opciones);
-
-  // Mostrar la fecha en el div
-  document.getElementById("fecha").textContent = fechaFormateada;
-</script>
 
 {% endblock %}
