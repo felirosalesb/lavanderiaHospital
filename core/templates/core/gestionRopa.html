@@ -8,76 +8,93 @@
 <!-- Titulo pagina -->
 <h1 class="tituloGestionRopa">Gestión Ropa</h1>
 
-<!-- INICIO GENERADOR DE REPORTES -->
-<div class="generadorReportes">
-  <button
-    type="button"
-    class="btn btn-primary"
-    data-bs-toggle="modal"
-    data-bs-target="#reporteModal"
-  >
-    Generar reporte
+<!--GENERAR REPORTES-->
+<div class="descargarInforme">
+  <button type="button" class="btn btn-success" onclick="descargarPDF()">
+    Descargar informe en PDF
   </button>
 </div>
 
-<!-- Modal -->
-<div
-  class="modal fade"
-  id="reporteModal"
-  data-bs-backdrop="static"
-  data-bs-keyboard="false"
-  tabindex="-1"
-  aria-labelledby="reporteModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="reporteModalLabel">
-          Generar reportes
-        </h1>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <form id="externaForm">
-          <div class="mb-3">
-            <label for="ropaSuciaExterna" class="form-label">Ropa Sucia</label>
-            <input
-              type="number"
-              class="form-control"
-              id="ropaSuciaExterna"
-              name="ropaSuciaExterna"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label for="ropaLimpiaExterna" class="form-label"
-              >Ropa Limpia</label
-            >
-            <input
-              type="number"
-              class="form-control"
-              id="ropaLimpiaExterna"
-              name="ropaLimpiaExterna"
-              required
-            />
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Salir
-        </button>
-        <button type="button" class="btn btn-primary">Guardar cambios</button>
-      </div>
-    </div>
-  </div>
-</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  async function descargarPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    doc.text("Informe de Gestión de Ropa", 10, 10);
+    doc.text("Ropa Lavanderia Hospital", 10, 20);
+    doc.text(
+      `Total de Ropa: ${
+        document
+          .querySelector(
+            ".gestionRopaInterna .contenidoGestionRopaInterna h2:nth-child(1)"
+          )
+          .innerText.split(": ")[1]
+      }`,
+      10,
+      30
+    );
+    doc.text(
+      `Ropa sucia: ${
+        document
+          .querySelector(
+            ".gestionRopaInterna .contenidoGestionRopaInterna h2:nth-child(2)"
+          )
+          .innerText.split(": ")[1]
+      }`,
+      10,
+      40
+    );
+    doc.text(
+      `Ropa limpia disponible: ${
+        document
+          .querySelector(
+            ".gestionRopaInterna .contenidoGestionRopaInterna h2:nth-child(3)"
+          )
+          .innerText.split(": ")[1]
+      }`,
+      10,
+      50
+    );
+
+    doc.text("Ropa Lavanderia Externa", 10, 70);
+    doc.text(
+      `Total de Ropa: ${
+        document
+          .querySelector(
+            ".gestionRopaExterna .contenidoGestionRopaExterna h2:nth-child(1)"
+          )
+          .innerText.split(": ")[1]
+      }`,
+      10,
+      80
+    );
+    doc.text(
+      `Ropa sucia: ${
+        document
+          .querySelector(
+            ".gestionRopaExterna .contenidoGestionRopaExterna h2:nth-child(2)"
+          )
+          .innerText.split(": ")[1]
+      }`,
+      10,
+      90
+    );
+    doc.text(
+      `Ropa limpia disponible: ${
+        document
+          .querySelector(
+            ".gestionRopaExterna .contenidoGestionRopaExterna h2:nth-child(3)"
+          )
+          .innerText.split(": ")[1]
+      }`,
+      10,
+      100
+    );
+
+    doc.save("informe_gestion_ropa.pdf");
+  }
+</script>
 <!-- FIN GENERADOR DE REPORTES -->
 
 <!-- CONTENIDO -->

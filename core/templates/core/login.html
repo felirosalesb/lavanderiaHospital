@@ -13,16 +13,13 @@
     <div class="login-box">
       <div class="login-header">
         <header>Iniciar sesión</header>
-        <!--Formulario LOGIN-->
+      </div>
       <form action="" method="post">
-        {% csrf_token %}
-        {{form}}
+        {% csrf_token %} {{form}}
         <div class="input-submit">
           <button type="submit" class="submit-btn">Iniciar sesión</button>
         </div>
       </form>
-
-       <!--FIN Formulario LOGIN-->
       <div class="forgot">
         <section>
           <a href="#">Olvidé mi contraseña</a>
